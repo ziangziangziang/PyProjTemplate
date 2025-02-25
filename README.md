@@ -41,7 +41,6 @@ dynamic = ["version"]
 
 
 [tool.setuptools_scm]
-version_file = "pkg/_version.py
 ```
 
 To check the version, you can run:
