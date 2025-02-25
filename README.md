@@ -56,6 +56,16 @@ $ python -m setuptools_scm
 Check [setuptools dynamic metadata](https://packaging.python.org/en/latest/guides/writing-pyproject-toml/#static-vs-dynamic-metadata) and
 [setuptools_scm](https://github.com/pypa/setuptools-scm) for more information.
 
+## Testing
+
+I use `unittest` for testing. For each module you would like to test, create a corresponding test file in the `tests` directory. The test files should be named `test_<module_name>.py`. 
+
+To run the tests, you can use the following command:
+
+```bash
+$ python -m unittest discover tests
+```
+
 ## References
 
 - [Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/packaging-projects/)
