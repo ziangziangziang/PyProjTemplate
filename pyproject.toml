@@ -3,8 +3,18 @@ requires = ["setuptools>=64", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
+name = "PyProjTemplate"
+authors = [
+    {name= "Ziang Zhang", email = "ziangzhang1997@gmail.com"},
+] 
+readme = "README.md"
+description = "A example package"
+requires-python = ">=3.8"
 dynamic = ["version"]
-
+license = {file = "LICENSE"}
+[project.urls]
+Homepage = "https://github.com/ziangziangziang/PyProjTemplate"
+Issues = "https://github.com/ziangziangziang/PyProjTemplate/issues"
 
 [tool.setuptools_scm]
-version_file = "pkg/_version.py"
+
