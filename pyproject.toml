@@ -3,7 +3,7 @@ requires = ["setuptools>=64", "setuptools-scm>=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "PyProjTemplate"
+name = "templatepyproj"
 authors = [
     {name= "Ziang Zhang", email = "ziangzhang1997@gmail.com"},
 ] 
@@ -12,9 +12,21 @@ description = "A example package"
 requires-python = ">=3.8"
 dynamic = ["version"]
 license = {file = "LICENSE"}
+
 [project.urls]
 Homepage = "https://github.com/ziangziangziang/PyProjTemplate"
 Issues = "https://github.com/ziangziangziang/PyProjTemplate/issues"
+
+[project.optional-dependencies]
+test = ["tox", "pytest"]
+
+[tool.tox]
+requires = ["tox>=4.19"]
+env_list = ["3.6", "3.7", "3.8", "3.9", "3.10"]
+
+[tool.tox.env_run_base]
+description = "Run test under {base_python}"
+commands = [["python", "-m", "unittest", "discover", "tests"]]
 
 [tool.setuptools_scm]
 

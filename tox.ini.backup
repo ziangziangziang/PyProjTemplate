@@ -1,0 +1,12 @@
+[tox]
+testenvlist = py36, py38
+[testenv]
+commands = 
+    {envpython} -m unittest discover tests
+    {envpython} --version
+    
+[testenv:py36]
+basepython = python3.6
+
+[testenv:py38]
+basepython = python3.8
