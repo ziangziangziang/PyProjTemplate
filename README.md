@@ -2,7 +2,7 @@
 
 - [Tips on creating a Python package](#tips-on-creating-a-python-package)
   - [Directory structure](#directory-structure)
-  - [Single source versioning](#single-source-versioning)
+  - [Single source versioning with `git tag`](#single-source-versioning-with-git-tag)
   - [Testing](#testing)
     - [Test env setup with `tox`](#test-env-setup-with-tox)
     - [Unit testing](#unit-testing)
@@ -39,7 +39,7 @@
 
 The above is my directory structure. The `src` directory contains the package code, and the `tests` directory contains the test code. The `localtest` directory is for local testing and should not be ignored in the `.gitignore` file. The `__init__.py` files are used to mark directories as Python packages.
 
-## Single source versioning
+## Single source versioning with `git tag`
 
 To avoid manually changing the version number in multiple places (e.g. `setup.py`, `pyproject.toml`, and git tags), one can use `setuptools_scm` to automatically manage the versioning from git records. This way, the version number is derived from the latest git tag. In case there is no tag, it will use branch and the latest commit hash. The essential bits in the `pyproject.toml` file are:
 
@@ -51,7 +51,6 @@ build-backend = "setuptools.build_meta"
 [project]
 dynamic = ["version"]
 
-
 [tool.setuptools_scm]
 ```
 
@@ -60,7 +59,7 @@ To check the version, you can run:
 ```bash
 $ python -m setuptools_scm
 0.1.dev1+g5080c63
-$ git tag 0.1.0
+$ git tag v0.1.0 # "v" prefix is preferred
 $ python -m setuptools_scm
 0.1.0
 ```
