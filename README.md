@@ -2,6 +2,7 @@
 
 - [Tips on creating a Python package](#tips-on-creating-a-python-package)
   - [Directory structure](#directory-structure)
+  - [Installing the package from git repo](#installing-the-package-from-git-repo)
   - [Single source versioning with `git tag`](#single-source-versioning-with-git-tag)
   - [Testing](#testing)
     - [Test env setup with `tox`](#test-env-setup-with-tox)
@@ -38,6 +39,16 @@
 ```
 
 The above is my directory structure. The `src` directory contains the package code, and the `tests` directory contains the test code. The `localtest` directory is for local testing and should not be ignored in the `.gitignore` file. The `__init__.py` files are used to mark directories as Python packages.
+
+## Installing the package from git repo
+
+It's easy to install a python package if the package was a git repository without cloning the repo and installing it manually. For example, to install this package, do
+
+```bash
+pip install 'git+ssh://git@github.com/ziangziangziang/PyProjTemplate.git' # for SSH url
+pip install 'git+https://github.com/ziangziangziang/PyProjTemplate.git' # for HTTPS url
+
+```
 
 ## Single source versioning with `git tag`
 
