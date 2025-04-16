@@ -18,7 +18,11 @@ Homepage = "https://github.com/ziangziangziang/PyProjTemplate"
 Issues = "https://github.com/ziangziangziang/PyProjTemplate/issues"
 
 [project.optional-dependencies]
-test = ["tox", "pytest"]
+test = [
+    "tox", 
+    "pytest", 
+    # "numpy @ git+ssh://git@github.com/numpy/numpy.git", # Just for example
+]
 
 [tool.tox]
 requires = ["tox>=4.19"]
