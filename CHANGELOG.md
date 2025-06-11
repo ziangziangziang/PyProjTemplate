@@ -1,3 +1,6 @@
+## v0.2.1 2025/06/10
+### Add
+- Single source versioning with `_version.py`
 ## v0.2.0 2025/03/21
 ### Added
 - Multi-environment testing with `tox`.
